@@ -1,0 +1,12 @@
+node_modules/
+dist/
+output/
+.DS_Store
+
+# Local raw Cambridge source bundle; keep generated public assets instead
+web_ready_dict_data/full/
+
+# Keep generated deployable assets
+!public/
+!public/data/
+!public/audio/

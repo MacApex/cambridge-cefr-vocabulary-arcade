@@ -1,0 +1,20 @@
+{
+  "name": "cambridge-cefr-vocabulary-arcade",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "build:standalone": "npm run build:data && node scripts/build-standalone-html.mjs",
+    "build:portable": "npm run build:standalone",
+    "predev": "npm run build:data",
+    "dev": "vite",
+    "prebuild": "npm run build:data",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "vite": "^7.1.3"
+  }
+}
