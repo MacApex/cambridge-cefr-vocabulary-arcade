@@ -326,3 +326,12 @@ Original prompt: Implement the approved Cambridge CEFR A1-B2 Vocabulary Arcade p
   - `window.render_game_to_text()` works in production
   - `/data/game-data.json` returns `200`
   - representative audio asset `/audio/uk_pron/u/uka/uka__/uka____001.mp3` returns `200`
+
+## Repo Docs
+
+- Added a root `README.md` covering:
+  - project overview
+  - live Vercel, GitHub, Figma, and dataset links
+  - local setup and build commands
+  - runtime data layout
+  - deployment notes for the reduced data + audio subset
