@@ -1,0 +1,9 @@
+.git/
+node_modules/
+dist/
+output/
+portable/
+standalone/
+web_ready_dict_data/
+.DS_Store
+

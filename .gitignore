@@ -10,3 +10,4 @@ web_ready_dict_data/full/
 !public/
 !public/data/
 !public/audio/
+.vercel

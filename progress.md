@@ -286,3 +286,43 @@ Original prompt: Implement the approved Cambridge CEFR A1-B2 Vocabulary Arcade p
   - browser console errors remain at `0`
 - Tooling note:
   - Playwright’s higher-level screenshot/click helpers were blocked by sandbox path issues around `/.playwright-mcp`, so QA used direct Playwright page execution plus `window.render_game_to_text()` for verification.
+
+## Publish Prep
+
+- Installed publishing CLIs locally:
+  - `gh 2.89.0`
+  - `vercel 50.37.3`
+- Initialized a local git repository and created the first commit:
+  - `4b32f52` — `Redesign UI and package deployable audio subset`
+- Confirmed Vercel CLI authentication completed successfully for account `macapex`.
+- Created and linked the Vercel project:
+  - `cambridge-cefr-vocabulary-arcade`
+  - scope/team: `macapexs-projects`
+- First deploy attempt showed the CLI still uploading the raw local source tree, so added `.vercelignore` to exclude:
+  - `web_ready_dict_data/`
+  - `portable/`
+  - `standalone/`
+  - `node_modules/`
+  - other local-only folders
+- GitHub note:
+  - `gh` is installed, but GitHub CLI authentication has not completed yet, so GitHub repo creation/push is still blocked pending a successful `gh auth login`.
+
+## Vercel Deployment
+
+- Created a trimmed temporary deploy directory under `/tmp/` containing only:
+  - `index.html`
+  - `package.json`
+  - `package-lock.json`
+  - `src/`
+  - `scripts/`
+  - `public/`
+- Linked that trimmed directory to the same Vercel project and deployed from there with archived upload.
+- Production deployment succeeded:
+  - canonical URL: [cambridge-cefr-vocabulary-arcade.vercel.app](https://cambridge-cefr-vocabulary-arcade.vercel.app)
+  - deployment URL: [cambridge-cefr-vocabulary-arcade-on0gnn3z1-macapexs-projects.vercel.app](https://cambridge-cefr-vocabulary-arcade-on0gnn3z1-macapexs-projects.vercel.app)
+  - inspect URL: [deployment inspector](https://vercel.com/macapexs-projects/cambridge-cefr-vocabulary-arcade/DSqR58udonFGiwxYxPJb6EtfhZJq)
+- Verified production runtime:
+  - landing page loads
+  - `window.render_game_to_text()` works in production
+  - `/data/game-data.json` returns `200`
+  - representative audio asset `/audio/uk_pron/u/uka/uka__/uka____001.mp3` returns `200`
